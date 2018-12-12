@@ -1,0 +1,62 @@
+﻿@using LTW.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<SANPHAM>
+@{
+    ViewBag.Title = "TrangChu";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+<link href="~/Content/user/MyCss.css" rel="stylesheet" />
+<link href="~/Content/user/product.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="module">
+                    @Html.Action("Hangsx", "BinStore")
+                </div>
+                <div class="module2">
+
+                </div>
+            </div>
+            <div class="col-lg-10">
+                @foreach (var sp in Model)
+                {
+                    <div id="site-wrapper">
+                        <ul class="products homepage">
+                            <li class="preorder">
+                                <span class="tagimg "></span> <a href="@Url.Action("ChiTiet", "BinStore", new { id = sp.Masp })">
+                                    <img src="~/sanpham/@sp.Hinhanh" />
+                                    <h3>@sp.Tensp</h3>
+                                    <h4>
+                                        @String.Format("{0:0,0}", @sp.Gia) VNĐ
+                                    </h4>
+                                    <p class="info">
+                                        <span>Màn hình:@sp.Manhinh</span>
+                                        <span>HĐH:@sp.Hedieuhanh</span>
+                                        <span>CPU: @sp.CPU</span>
+                                        <span>Camera:@sp.Camera</span>
+                                        <span>Dung lượng pin: @sp.Pin</span>
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center;">
+        @* Tao liên kết các trang  *@
+        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+        <div class="MenuTrang">
+
+            @Html.PagedListPager(Model, page => Url.Action("TrangChu", new { page = page }))
+        </div>
+        <style>
+            .MenuTrang li {
+                display: inline;
+            }
+        </style>
+    </div>
+
+

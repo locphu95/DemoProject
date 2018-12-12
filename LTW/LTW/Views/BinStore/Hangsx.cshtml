@@ -1,0 +1,12 @@
+﻿@using LTW.Models;
+<p></p>
+<p class="lead">Sản Phẩm Mới</p>
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+       
+        <a href="@Url.Action("SPmoi", "LTW", new { id = item.Mahangsx})"  style="height:50px ; " class="list-group-item">
+            <img  src="~/logo/@item.Logo" />   @item.Tenhangsx
+        </a>        
+    }
+</div>

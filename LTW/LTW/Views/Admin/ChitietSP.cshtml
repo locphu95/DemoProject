@@ -1,0 +1,120 @@
+﻿@model LTW.Models.SANPHAM
+
+@{
+    ViewBag.Title = "ChitietSP";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+<h2>Chi tiết sản phẩm</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sản phẩm :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tensp)
+        </dd>
+
+        <dt>
+            Hãng sãn xuất :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HANGSX.Tenhangsx)
+        </dd>
+
+        <dt>
+            Tình trạng máy :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tinhtrang)
+        </dd>
+
+        <dt>
+            Màn hình :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manhinh)
+        </dd>
+
+        <dt>
+            Hệ điều hành
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hedieuhanh)
+        </dd>
+
+        <dt>
+            CPU :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPU)
+        </dd>
+
+        <dt>
+            Ram :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ram)
+        </dd>
+
+        <dt>
+            Dung lượng Pin
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pin)
+        </dd>
+
+        <dt>
+            Khuyến mãi :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Khuyenmai)
+        </dd>
+
+        <dt>
+            Giá bán
+        </dt>
+
+        <dd>
+            @String.Format("{0:0,0}", Model.Gia) VNĐ
+        </dd>
+
+        <dt>
+            Hình ảnh sản phẩm :
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/sanpham/"+  Model.Hinhanh)" width="120px" />
+        </dd>
+
+        <dt>
+            Dung lượng bộ nhớ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bonhotrong)
+        </dd>
+
+        <dt>
+            Ngày cập nhật :
+        </dt>
+
+        <dd>
+            @String.Format("{0:dd/MM/yyyy}", Model.Ngaycapnhat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Điều chỉnh", "SuaSP", new { id = Model.Masp }) |
+    @Html.ActionLink("Về trang sản phẩm", "SanPham")
+</p>

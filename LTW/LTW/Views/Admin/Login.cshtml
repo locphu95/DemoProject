@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link href="~/Content/admin/login/style.css" rel="stylesheet" />
+  
+</head>
+<body>
+    <div id="wrapper">
+        <div class="join">Admin Login</div>
+        <div class="lock"></div>
+        <div class="clr"></div>
+        <a class="facebook" href="#">Facebook</a>
+        <a class="google" href="#">Google+</a>
+        <div class="clr"><hr /></div>
+        <div class="forms">
+           @using (Html.BeginForm())
+           {
+            <form action="" method="get" name="register">
+                <input name="username" type="text" placeholder="Nhập tài khoản" size="70" ; id="username" />
+                <input name="password" type="password" placeholder="Nhập mật khẩu" size="70"; id="password" />
+            </form>
+           }
+        </div>
+        <a class="create-acc" href="http://localhost:52107/Admin/Index">Đăng nhập</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CSDL">
+  <DataContextMoniker Name="/CSDLDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9901cdfc-74f7-47dd-836b-9b004e3936fd" absoluteBounds="6.25, 2.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CSDLDataContext/CHITIETDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1b907fc-93e9-43ad-bfc5-b62e26c3abc2" absoluteBounds="6.265, 2.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="92620c51-e269-40e2-9ecb-cf0f902cbb56" absoluteBounds="6.75, 4.75, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/CSDLDataContext/Trangbia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="630f5d30-a156-49c9-a863-6044783d8ce1" absoluteBounds="6.765, 5.21, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0dbb231e-2bde-4444-804b-2a95ab61adcc" absoluteBounds="3.5, 5.875, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/CSDLDataContext/DATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="214aa300-75de-40c8-a25c-d09695030514" absoluteBounds="3.515, 6.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="457d0dd6-d51d-42d0-a249-28b001b03f5a" absoluteBounds="0.75, 2.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/CSDLDataContext/HANGSX" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a3a0aba5-f107-48b9-8a79-475f2837c2fd" absoluteBounds="0.765, 2.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ca0450e-2d01-4e1a-8e31-7633e873f0a1" absoluteBounds="0.75, 5.625, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/CSDLDataContext/KHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3994358f-6d43-4f34-a8fa-2a381c9cd68f" absoluteBounds="0.765, 6.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="de5a4c90-d76f-48cf-adb7-4c4443300545" absoluteBounds="6.75, 6.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/CSDLDataContext/Lienhe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f43ba897-6eca-4ad3-9fb3-758f0a6cb00d" absoluteBounds="6.765, 7.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d501ac83-83a9-4e8d-9d8f-d8210aab10cd" absoluteBounds="3.5, 1, 2, 3.6939111328124992">
+      <DataClassMoniker Name="/CSDLDataContext/SANPHAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d583b45-8f70-4845-a766-db91ad8b767d" absoluteBounds="3.515, 1.46, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dc426e0f-3b0a-4a81-a0ee-eb46041cfe09" absoluteBounds="8.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/CSDLDataContext/Tkadmin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75871824-ff0e-430f-baf7-69a33fdfb853" absoluteBounds="8.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 6.28125); (6.46875 : 6.28125); (6.46875 : 3.70359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CSDLDataContext/DATHANG/DATHANG_CHITIETDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="0dbb231e-2bde-4444-804b-2a95ab61adcc" />
+        <classShapeMoniker Id="9901cdfc-74f7-47dd-836b-9b004e3936fd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.85659912109375); (3.5 : 6.85659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CSDLDataContext/KHACHHANG/KHACHHANG_DATHANG" />
+      <nodes>
+        <classShapeMoniker Id="5ca0450e-2d01-4e1a-8e31-7633e873f0a1" />
+        <classShapeMoniker Id="0dbb231e-2bde-4444-804b-2a95ab61adcc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.91429768880208); (6.25 : 2.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CSDLDataContext/SANPHAM/SANPHAM_CHITIETDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="d501ac83-83a9-4e8d-9d8f-d8210aab10cd" />
+        <classShapeMoniker Id="9901cdfc-74f7-47dd-836b-9b004e3936fd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.81814697265625); (3.5 : 2.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CSDLDataContext/HANGSX/HANGSX_SANPHAM" />
+      <nodes>
+        <classShapeMoniker Id="457d0dd6-d51d-42d0-a249-28b001b03f5a" />
+        <classShapeMoniker Id="d501ac83-83a9-4e8d-9d8f-d8210aab10cd" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

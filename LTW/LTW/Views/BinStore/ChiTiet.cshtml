@@ -1,0 +1,53 @@
+﻿<style type="text/css">
+    #Datmua a {
+        clear: both;
+        background-color: red;
+        color: white;
+        width: 120px;
+        height: 35px;
+        display: block;
+        float: right;
+        text-align: center;
+        padding-top: 10px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        #Datmua a:hover {
+            background-color: gray;
+            color: red;
+        }
+@using LTW.Models;
+</style>
+@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+<h3 style="text-align:center "> THÔNG TIN CHI TIẾT SẢN PHẨM</h3>
+<div  class="row">
+  <div>
+        <div style="width:40%; float:left; border-left: dotted 1px; border-color:azure">
+            <img src="~/sanpham/@Model.Hinhanh" width="70%" />
+        </div>
+        <div style="width:60%; float:left; padding:10px">
+            <h4 style="font-weight:bold; color:red">Tên sản phẩm: @Model.Tensp </h4>
+            <p style="text-align:justify"><Span style="font-weight:bold"> Màn hình: </Span>@Model.Manhinh </p>
+            <p style="text-align:justify"><Span style="font-weight:bold"> Hệ điều hành: </Span>@Model.Hedieuhanh </p>
+            <p style="text-align:justify"><Span style="font-weight:bold"> CPU: </Span>@Model.CPU </p>
+            <p style="text-align:justify"><Span style="font-weight:bold"> Ram: </Span>@Model.Ram </p>
+            <p style="text-align:justify"><Span style="font-weight:bold"> Dung lượng Pin: </Span>@Model.Pin </p>
+            <p style="text-align:justify"><Span style="font-weight:bold"> Bộ nhớ trong: </Span>@Model.Bonhotrong </p>
+            <p style="font-weight:bold"> Giá bán: <span style="color:red; font-size:20pt"> @String.Format("{0:0,0}", Model.Gia) VNĐ </span></p>
+            <div>
+                <div id="Datmua">
+                    <a href="@Url.Action("ThemGiohang", "GioHang", new { @iMasach= @Model.Masp, @strURL=Request.Url.ToString() })" class="list-group-item">
+                        ĐẶT MUA
+                    </a>
+                </div>
+                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
+                
+            </div>
+        </div>
+    </div>
+</div>

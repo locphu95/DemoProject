@@ -1,0 +1,64 @@
+﻿
+@model IEnumerable<LTW.Models.DATHANG>
+ @helper Truncate(string input, int length)
+{
+if (input.Length < length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+
+
+@{
+    ViewBag.Title = "DonHang";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+<h2>ĐƠN ĐẶT HÀNG</h2>
+
+<table class="table" border="1">
+
+    <tr>
+        <th style="width:200px">  Mã đơn hàng </th>
+        <th style="width:250px">  Tên khách hàng  </th>
+        <th style="width:300px">  Tình trạng thanh toán    </th>
+        <th style="width:250px">  Ngày đặt hàng  </th>
+        <th style="width:300px">  Ngày giao hàng </th>
+        <th style="width:300px">  Đã giao hàng </th>
+        <th style="width:300px">  </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+            @Html.DisplayFor(modelItem => item.Madh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KHACHHANG.Tenkh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dathanhtoan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngaydathang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngaygiahang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dagiaohang)
+            </td>
+            <td>
+                @Html.ActionLink("Sữa", "SuaDH", new { id = item.Madh }) |
+                @Html.ActionLink("Chi tiết", "ChitietDH", new { id = item.Madh }) |
+                @Html.ActionLink("Xóa", "XoaDH", new { id = item.Madh })
+            </td>
+        </tr>
+    }
+
+</table>
+

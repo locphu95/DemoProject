@@ -1,0 +1,140 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/icon/logotile.png">
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/admin/bootstrap.min.css" rel="stylesheet" />
+    <!-- Menu CSS -->
+    <link href="~/Content/admin/sidebar-nav.min.css" rel="stylesheet" />
+    <!-- toast CSS -->
+    <link href="~/Content/admin/jquery.toast.css" rel="stylesheet" />
+    <!-- morris CSS -->
+    <link href="~/Content/admin/morris.css" rel="stylesheet" />
+    <!-- animation CSS -->
+    <link href="~/Content/admin/animate.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/Content/admin/style.css" rel="stylesheet" />
+    <!-- color CSS -->
+    <link href="~/Content/admin/blue-dark.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
+                <div class="top-left-part"><a class="logo" href="#"><b><img src="~/icon/admin.png" alt="home" /></b><span class="hidden-xs"><img src="~/icon/pixeladmin-text-dark.png" alt="home" /></span></a></div>
+                <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs">
+                    <li>
+                        <form role="search" class="app-search hidden-xs">
+                            <input type="text" placeholder="Từ khóa" class="form-control"> <a href=""><img src="~/icon/seach.png"></a>
+                        </form>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li>
+                        <a class="profile-pic" href="#"> <img src="~/icon/anh.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Lâm Ngọc Diễm</b> </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- Left navbar-header -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                <ul class="nav" id="side-menu">
+                    <li style="padding: 10px 0 0; ">
+                     <a href="http://localhost:52107/Admin/SanPham"class="waves-effect"><i aria-hidden="true"></i><span class="hide-menu"><img src="~/icon/sanpham2.png"> Sản Phẩm</span></a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:52107/Admin/Khachhang" class="waves-effect"><i aria-hidden="true"></i><span class="hide-menu"><img src="~/icon/user.png">Khách Hàng</span></a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:52107/Admin/DonHang" class="waves-effect"><i  aria-hidden="true"></i><span class="hide-menu"><img src="~/icon/donhang.png"> Đơn Hàng</span></a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:52107/Admin/HangSx" class="waves-effect"><i  aria-hidden="true"></i><span class="hide-menu"><img src="~/icon/nhasx.png">Nhà Sản Xuất</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="waves-effect"><i  aria-hidden="true"></i><span class="hide-menu"><img src="~/icon/bia.png">Liên Hệ</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="waves-effect"><i  aria-hidden="true"></i><span class="hide-menu"><img src="~/icon/bia2.png">Trang Bìa  </span></a>
+                    </li>
+                    <li>
+                        <a href="404.html" class="waves-effect"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i><span class="hide-menu">Error 404</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Left navbar-header end -->
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+             @RenderBody()
+            </div>
+            <!-- /.container-fluid -->
+            <footer class="footer text-center"> 2017 &copy; Pixel Admin brought to you by wrappixel.com </footer>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="~/Content/admin/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Content/admin/bootstrap.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="~/Content/admin/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="~/Content/admin/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="~/Content/admin/waves.js"></script>
+    <!--Counter js -->
+    <script src="~/Content/admin/jquery.waypoints.js"></script>
+    <script src="~/Content/admin/jquery.waypoints.min.js"></script>
+    <!--Morris JavaScript -->
+    <script src="~/Content/admin/raphael-min.js"></script>
+    <script src="~/Content/admin/morris.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Content/admin/custom.min.js"></script>
+    <script src="~/Content/admin/dashboard1.js"></script>
+    <script src="~/Content/admin/jquery.toast.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.toast({
+                heading: 'Chào mừng bạn đến với trang Admin',
+                text: 'Dữ liệu đang được load',
+                position: 'top-right',
+                loaderBg: '#ff6849',
+                icon: 'info',
+                hideAfter: 3500,
+                stack: 6
+            })
+        });
+    </script>
+</body>
+
+</html>

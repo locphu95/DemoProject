@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DoAnWeb" Class="CSDLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=PC;Initial Catalog=DoAnWeb;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DoAnWebConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CHITIETDATHANG" Member="CHITIETDATHANGs">
+    <Type Name="CHITIETDATHANG">
+      <Column Name="Madh" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Masp" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="DATHANG_CHITIETDATHANG" Member="DATHANG" ThisKey="Madh" OtherKey="Madh" Type="DATHANG" IsForeignKey="true" />
+      <Association Name="SANPHAM_CHITIETDATHANG" Member="SANPHAM" ThisKey="Masp" OtherKey="Masp" Type="SANPHAM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Trangbia" Member="Trangbias">
+    <Type Name="Trangbia">
+      <Column Name="hinhanhbia" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DATHANG" Member="DATHANGs">
+    <Type Name="DATHANG">
+      <Column Name="Madh" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Makh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dathanhtoan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Ngaydathang" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Ngaygiahang" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Dagiaohang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DATHANG_CHITIETDATHANG" Member="CHITIETDATHANGs" ThisKey="Madh" OtherKey="Madh" Type="CHITIETDATHANG" />
+      <Association Name="KHACHHANG_DATHANG" Member="KHACHHANG" ThisKey="Makh" OtherKey="Makh" Type="KHACHHANG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HANGSX" Member="HANGSXes">
+    <Type Name="HANGSX">
+      <Column Name="Mahangsx" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tenhangsx" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Logo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="HANGSX_SANPHAM" Member="SANPHAMs" ThisKey="Mahangsx" OtherKey="Mahangsx" Type="SANPHAM" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
+    <Type Name="KHACHHANG">
+      <Column Name="Makh" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tenkh" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Diachikh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sdtkh" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="Taikhoan" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Matkhau" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngaysinh" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="KHACHHANG_DATHANG" Member="DATHANGs" ThisKey="Makh" OtherKey="Makh" Type="DATHANG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Lienhe" Member="Lienhes">
+    <Type Name="Lienhe">
+      <Column Name="manoidung" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="chitietnoidung" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SANPHAM" Member="SANPHAMs">
+    <Type Name="SANPHAM">
+      <Column Name="Masp" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tensp" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Mahangsx" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Tinhtrang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Manhinh" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Hedieuhanh" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CPU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ram" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Pin" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Khuyenmai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Hinhanh" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Bonhotrong" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Ngaycapnhat" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Camera" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="SANPHAM_CHITIETDATHANG" Member="CHITIETDATHANGs" ThisKey="Masp" OtherKey="Masp" Type="CHITIETDATHANG" />
+      <Association Name="HANGSX_SANPHAM" Member="HANGSX" ThisKey="Mahangsx" OtherKey="Mahangsx" Type="HANGSX" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tkadmin" Member="Tkadmins">
+    <Type Name="Tkadmin">
+      <Column Name="maadmin" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pass" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,63 @@
+﻿@using LTW.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<LTW.Models.HANGSX>
+@helper Truncate(string input, int length)
+{
+if (input.Length < length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+@{
+    ViewBag.Title = "HangSx";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>Hãng sản xuất</h2>
+
+<p>
+    @Html.ActionLink("Thêm hảng sản xuất", "")
+</p>
+<table class="table" border="1">
+    <tr>
+        <th style="width:250px"> Mã hãng sản xuất </th>
+        <th style="width:200px">  Tên hãng sản xuất </th>
+        <th style="width:100px">  Logo    </th>
+        <th = style="width:300px"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mahangsx)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tenhangsx)
+            </td>
+            <td>
+                <img src="@Url.Content("~/logo/"+ item.Logo)" width="40" />
+            </td>
+            <td>
+                @Html.ActionLink("Sữa", "SuaHsx", new { id = item.Mahangsx }) |
+                @Html.ActionLink("Chi tiết", "ChitietHsx", new { id = item.Mahangsx }) |
+                @Html.ActionLink("Xóa", "XoaHsx", new { id = item.Mahangsx })
+            </td>
+        </tr>
+    }
+</table>
+@* Tao liên kết các trang  *@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("HangSx", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

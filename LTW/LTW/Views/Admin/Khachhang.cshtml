@@ -1,0 +1,80 @@
+﻿@using PagedList.Mvc;
+@model PagedList.PagedList<LTW.Models.KHACHHANG>
+@helper Truncate(string input, int length)
+{
+if (input.Length < length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+
+
+@{
+    ViewBag.Title = "Khachhang";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<h2>Thông tin khách hàng</h2>
+<table class="table" border="1">
+    <tr>
+        <th style="width:150px">  Mã khách hàng </th>
+        <th style="width:350px">  Tên khách hàng </th>
+        <th style="width:100px">  Địa chỉ    </th>
+        <th style="width:150px">  Số điện thoại  </th>
+        <th style="width:100px">  Tài khoản </th>
+        <th style="width:120px">  Mật khẩu </th>
+        <th style="width:120px">  Email   </th>
+        <th style="width:200px">  Ngày sinh  </th>
+        <th style="width:900px">     </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Makh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tenkh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diachikh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sdtkh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Taikhoan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matkhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngaysinh)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "SuaKH", new { id = item.Makh }) |
+                @Html.ActionLink("Chi tiết", "ChitietKH", new { id = item.Makh }) |
+                @Html.ActionLink("Xóa", "XoaKH", new { id = item.Makh })
+            </td>
+        </tr>
+    }
+
+</table>@* Tao liên kết các trang  *@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

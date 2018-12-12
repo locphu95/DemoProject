@@ -1,0 +1,298 @@
+@CHARSET "UTF-8";
+.products {
+    overflow:hidden;
+    width: 230px;
+    height: 230px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 1px;
+    text-align: center;
+    border: 1px solid;
+    border-color: #808080;
+    border-radius: 5px;
+}
+.products li {
+	float: left;
+	position: relative;
+	width: 200px;
+	height: 230px;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background: #fff;
+	overflow: hidden;
+	margin: 0
+}
+
+.products.homepage {
+	min-width: 200px
+}
+
+.products.homepage li {
+	width: 100% 
+}
+
+/*.products li h1,.products li h2,.products li h3,.products li h4,.products li h5,.products li h6
+	{
+	margin: 0
+}*/
+
+.products li a {
+	display: table-cell;
+	height: 200px;
+	padding: 2px;
+	overflow: hidden;
+	vertical-align: bottom;
+
+}
+.products li a h3 {
+	font-size: 14px;
+	font-weight: normal;
+	color: #333;
+	line-height: 14px;
+	display: block
+}
+
+.products li a h4 {
+	color: red;
+	font-size: 14px;
+	font-weight: bold;
+	display: table-cell;
+	line-height: inherit;
+    padding-left:5px;
+}
+.products li a img {
+        max-width: 150px;
+        max-height: 150px;
+        margin: 5px auto 10px;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 10px;
+}
+.products li .tagimg {
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 2;
+	width: 61px;
+	height: 58px
+}
+.products li .info {
+	display: block;
+	overflow: hidden;
+	-ms-opacity: 0;
+	opacity: 0;
+	background: rgba(0, 0, 0, 0);
+	height: 140px;
+	width: 100%;
+	padding: 10px;
+	font-size: 12px;
+	color: #fff;
+	line-height: 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity = 0)
+}
+
+.products li:hover .info {
+	background: rgba(0, 0, 0, .85);
+	-ms-opacity: 1;
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity = 100);
+	-khtml-opacity: 1
+}
+
+.products li .info span {
+	color: #fff;
+	display: block;
+	padding: 2px 6px
+}
+
+@media screen and (max-width:1160px) {
+	.products {
+		min-width: 904px
+	}
+	.products.homepage {
+		min-width: 604px
+	}
+	.products li {
+		width: 179px
+	}
+	.products li .btncompare {
+		left: 17.5%;
+		bottom: 92px
+	}
+	.products li .btncompare2 {
+		bottom: 60px
+	}
+	.products li a img {
+		margin-bottom: 0
+	}
+	.products li .info {
+		height: 128px;
+		padding: 2px;
+		width: 98%
+	}
+}
+
+html,body,p,a,font,ol,ul,li,form,label,th,td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline
+}
+
+#site-wrapper {
+	line-height: 1;
+	color: #000;
+	background: #fff;
+	width: 802px;
+	color: #333;
+	font-size: 14px;
+	font-family: 'Open Sans', "HelveticaNeue", "Helvetica Neue", Helvetica,Arial, sans-serif;
+	line-height: 18px;
+
+}
+
+:focus {
+	outline: 0;
+	outline-width: 0
+}
+
+ol,ul {
+	list-style: none
+}
+
+a img {
+	border: none
+}
+
+
+a {
+	color: #0af;
+	text-decoration: none
+}
+
+a:hover {
+	color: #069;
+	border-bottom: 1px dotted #91b369
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: #000;
+	font-weight: normal;
+	margin: 0;
+	margin-bottom: 18px;
+	text-rendering: optimizelegibility
+}
+
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a,h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover
+	{
+	border-bottom: none;
+	text-decoration: none
+}
+
+h1 {
+	font-size: 45px;
+	line-height: 54px
+}
+
+h2 {
+	font-size: 36px;
+	line-height: 45px
+}
+
+h3 {
+	font-size: 27px;
+	line-height: 36px
+}
+
+h4 {
+	font-size: 18px;
+	height: auto;
+	line-height: 27px
+}
+
+h5 {
+	font-size: 16px;
+	line-height: 27px
+}
+
+h6 {
+	font-size: 14px;
+	line-height: 18px
+}
+
+ul,ol,p,blockquote {
+	font-size: 13px;
+	line-height: 18px;
+	margin-bottom: 18px
+}
+
+ul,ol {
+	margin-left: 27px
+}
+
+ul {
+	list-style: square
+}
+
+ol {
+	list-style: decimal
+}
+
+ul li,ol li {
+	margin-bottom: 9px
+	font-size: 13px
+}
+
+
+p a {
+	font-size: 13px
+}
+
+ul li ol,ul li ul,ol li ol,ol li ul {
+	margin: 9px 27px 0
+}
+
+ul li ul,ol li ul {
+	list-style-type: disc
+}
+
+ul,ol {
+	
+}
+
+ul.paragraph li,ol.paragraph li,ul li p,ol li p {
+	margin-bottom: 18px
+}
+
+p {
+	text-indent: 0;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	word-wrap: break-word
+}
+
+strong {
+	font-weight: bold
+}
+
